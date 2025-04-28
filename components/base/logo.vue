@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     class="base-logo"
-    :class="{ 'base-logo--compact': compact }"
+    :class="rootCSSClasses"
     to="/"
   >
     <div class="base-logo__logo">
@@ -19,11 +19,20 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+import type { CSSClasses } from '~/types';
+
 interface LogoProps {
   compact?: boolean;
+  contrast?: boolean;
 }
 
-const { compact } = defineProps<LogoProps>()
+const { compact, contrast } = defineProps<LogoProps>()
+
+const rootCSSClasses = computed((): CSSClasses => ({
+  'base-logo--compact': compact,
+  'base-logo--contrast': contrast,
+}))
 </script>
 
 <style>
@@ -60,4 +69,13 @@ const { compact } = defineProps<LogoProps>()
 }
 
 .base-logo--compact {}
+
+.base-logo--contrast .base-logo__logo {
+  color: var(--color-main);
+  background: var(--color-white);
+}
+
+.base-logo--contrast .base-logo__name {
+  color: var(--color-white);
+}
 </style>
