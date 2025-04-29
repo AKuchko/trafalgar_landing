@@ -11,7 +11,12 @@
 <style>
 .base-card {
   border-radius: 20px;
-  box-shadow: 10px 40px 50px 0 rgba(229, 233, 246, 0.4);
+  box-shadow: var(--shadow-default);
   background: var(--color-white);
+  transition: var(--transition);
+}
+
+.base-card:hover {
+  box-shadow: var(--shadow-fat);
 }
 </style>

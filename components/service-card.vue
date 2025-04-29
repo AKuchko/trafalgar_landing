@@ -34,11 +34,6 @@ const { icon, title, description } = defineProps<IServiceCardProps>();
 .service-card {
   height: 354px;
   padding: 54px 39px 47px;
-  transition: var(--transition);
-}
-
-.service-card:hover {
-  box-shadow: var(--shadow-fat);
 }
 
 .service-card__image-wrap {
