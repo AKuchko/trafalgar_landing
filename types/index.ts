@@ -1,3 +1,5 @@
+import type { RouteLocationRaw } from 'vue-router';
+
 export type CSSClasses = Record<string, boolean>
 
 export interface ImageInfo {
@@ -10,7 +12,7 @@ export interface CardInfo {
   image: ImageInfo,
   title: string,
   description: string,
-  pageLink?: string,
+  pageLink?: RouteLocationRaw,
 }
 
 export interface ListItem {

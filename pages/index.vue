@@ -10,6 +10,16 @@
         :description="card.description"
       />
     </div>
+    <div class="cards-list">
+      <article-card
+        v-for="(card, index) in articlesCards"
+        :key="index"
+        :image="card.image"
+        :title="card.title"
+        :description="card.description"
+        :link="card.pageLink || ''"
+      />
+    </div>
   </div>
 </template>
 
@@ -70,6 +80,39 @@ const serviceCards = ref<CardInfo[]>([
     },
     title: 'Tracking',
     description: 'Track and save your medical history and health data ',
+  },
+])
+
+const articlesCards = ref<CardInfo[]>([
+  {
+    image: {
+      url: '/article/1.webp',
+      width: 'auto',
+      height: '240px',
+    },
+    title: 'Disease detection, check up in the laboratory',
+    description: 'Choose your doctor from thousands of specialist, general, and trusted hospitals',
+    pageLink: '/article/1'
+  },
+  {
+    image: {
+      url: '/article/2.webp',
+      width: 'auto',
+      height: '240px',
+    },
+    title: 'Online pharmacy',
+    description: 'Buy  your medicines with our mobile application with a simple delivery system',
+    pageLink: '/article/2'
+  },
+  {
+    image: {
+      url: '/article/3.webp',
+      width: 'auto',
+      height: '240px',
+    },
+    title: 'Consultation',
+    description: 'Free consultation with our trusted doctors and get the best recomendations',
+    pageLink: '/article/3'
   },
 ])
 </script>
